@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Utkarsh Choudhary — Developer, Prayagraj</title>
+<meta name="description" content="Utkarsh Choudhary is a developer in Prayagraj, India, studying B.Tech at VIT-AP. He builds complete web tools with React, Python and FastAPI — CampusPulse, SwiftPDF and Pdf-tools.">
+
+<!-- Open Graph / Twitter. Absolute og:url and og:image belong here once the site has a public domain. -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Utkarsh Choudhary">
+<meta property="og:title" content="Utkarsh Choudhary — Developer, Prayagraj">
+<meta property="og:description" content="B.Tech student at VIT-AP building complete web tools with React, Python and FastAPI. CampusPulse, SwiftPDF, Pdf-tools.">
+<meta property="og:image" content="photo.jpg">
+<meta property="og:image:alt" content="Portrait of Utkarsh Choudhary">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Utkarsh Choudhary — Developer, Prayagraj">
+<meta name="twitter:description" content="B.Tech student at VIT-AP building complete web tools with React, Python and FastAPI.">
+<meta name="twitter:image" content="photo.jpg">
+
+<!-- Favicon: a rust ledger tab with a slate rule, drawn inline so the file stays dependency-free. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23A03A22'/%3E%3Crect x='5' y='7' width='22' height='2' fill='%23EAE3D5'/%3E%3Crect x='5' y='14' width='16' height='2' fill='%23EAE3D5'/%3E%3Crect x='5' y='21' width='19' height='2' fill='%231F4E4A'/%3E%3C/svg%3E">
+
+<!--
+  No-flash theme. This must stay INLINE and run BEFORE the stylesheet: it blocks parsing,
+  so the page never paints in the wrong theme. Without it a dark-mode visitor gets a
+  white flash on every load. Keep it here, keep it first.
+-->
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      var theme = stored === 'light' || stored === 'dark'
+        ? stored
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+    } catch (e) {
+      // Private mode / storage blocked: fall back to the light default in the CSS.
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+
+<noscript>
+  <style>
+    /* Without JS nothing reveals the content, so make everything visible up front. */
+    [data-reveal] { opacity: 1 !important; transform: none !important; }
+    /* The nav ships with the `hidden` attribute for the mobile toggle; show it permanently. */
+    #siteNav[hidden] { display: block !important; }
+    /* Meter fills render expanded unless script.js can also collapse them. */
+    .meter__fill { transform: scale(1, 1) !important; }
+  </style>
+</noscript>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="gauge" aria-hidden="true"><span class="gauge-dot"></span></div>
+
+<header class="site-header">
+  <p class="wordmark">UTKARSH CHOUDHARY</p>
+
+  <nav id="siteNav" aria-label="Sections" hidden>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="site-header__controls">
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" focusable="false">
+        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="visually-hidden">Menu</span>
+    </button>
+
+    <button id="themeToggle" type="button" aria-pressed="false">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" focusable="false">
+        <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/>
+      </svg>
+      <span class="visually-hidden" data-theme-label>Toggle dark theme</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ------------------------------------------------------------------ hero -->
+  <section class="hero" aria-labelledby="hero-name">
+    <div class="hero__text">
+      <p class="hero__slug">PRAYAGRAJ, INDIA &middot; B.TECH VIT-AP 2025&ndash;2029</p>
+      <h1 class="hero__name" id="hero-name">Utkarsh <span>Choudhary</span></h1>
+      <p class="hero__role">I build complete web tools &mdash; a React front end, a real API, a real database &mdash; and ship them.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--solid" href="#work">See my work</a>
+        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <figure class="hero__figure" data-reveal>
+      <img class="hero__figimg" src="photo.jpg" width="864" height="1152"
+           alt="Portrait of Utkarsh Choudhary standing near moored boats on the Ganges at Prayagraj.">
+      <figcaption>Prayagraj &middot; the boats go out at first light.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ----------------------------------------------------------------- about -->
+  <section class="section" id="about" aria-labelledby="about-title" data-reveal>
+    <div class="section__head">
+      <p class="section__num">Section 01</p>
+      <h2 class="section__title" id="about-title">About</h2>
+    </div>
+
+    <p class="lede">I build small, complete tools and put them online. Most of my work is a front end talking to a real API and a real database. CampusPulse started as a way to stop losing track of my own coursework; SwiftPDF and Pdf-tools came from needing the same PDF operation twice and not finding a version that stayed in the browser. I am four years into a B.Tech at VIT-AP, and I care more about the last mile &mdash; does the thing actually run &mdash; than about picking a fashionable stack.</p>
+
+    <table class="fact-table">
+      <caption class="visually-hidden">Key facts</caption>
+      <tbody>
+        <tr><th scope="row">Base</th><td>Prayagraj, Uttar Pradesh, India</td></tr>
+        <tr><th scope="row">Role</th><td>Full-stack web development &mdash; React and TypeScript on the client, Python and FastAPI on the server</td></tr>
+        <tr><th scope="row">Focus</th><td>Student tooling, browser-based document utilities, APIs with persistence and tests</td></tr>
+        <tr><th scope="row">Currently</th><td>B.Tech undergraduate, VIT Amaravati &mdash; class of 2029</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ------------------------------------------------------------------ work -->
+  <section class="section" id="work" aria-labelledby="work-title" data-reveal>
+    <div class="section__head">
+      <p class="section__num">Section 02</p>
+      <h2 class="section__title" id="work-title">Work</h2>
+    </div>
+
+    <article class="row" data-reveal>
+      <p class="row__num">P-01</p>
+      <h3 class="row__title">CampusPulse</h3>
+      <p class="row__desc">A student academic planner. Semesters, courses, assessments, grades, attendance and exam schedule in one place, with file uploads against each course and a what-if calculator for your GPA. The FastAPI backend uses SQLAlchemy over SQLite with JWT auth; the React client is TypeScript on Vite with React Router. Covered by pytest tests, and the folder carries an architecture document.</p>
+      <ul class="chips">
+        <li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Vite</li><li class="chip">Tailwind</li><li class="chip">React Router</li><li class="chip">FastAPI</li><li class="chip">SQLAlchemy</li><li class="chip">SQLite</li><li class="chip">JWT</li><li class="chip">pytest</li>
+      </ul>
+      <p class="row__links">
+        <a class="btn btn--ghost" href="https://campuspulse-mu.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="CampusPulse live demo, opens in a new tab">Live demo</a>
+        <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/campuspulse" target="_blank" rel="noopener noreferrer" aria-label="CampusPulse source on GitHub, opens in a new tab">Repository</a>
+      </p>
+    </article>
+
+    <article class="row" data-reveal>
+      <p class="row__num">P-02</p>
+      <h3 class="row__title">SwiftPDF</h3>
+      <p class="row__desc">A PDF toolkit that runs in the browser. Merge, split, compress, crop, image-to-PDF, page numbering and saved themes. The files never leave the machine you opened them on, which is the whole point when the documents are marksheets and certificates.</p>
+      <ul class="chips">
+        <li class="chip">JavaScript</li><li class="chip">PDF manipulation</li><li class="chip">Client-side processing</li><li class="chip">Theming</li>
+      </ul>
+      <p class="row__links">
+        <a class="btn btn--ghost" href="https://swift-pdf-beta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="SwiftPDF live demo, opens in a new tab">Live demo</a>
+        <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/swift_pdf" target="_blank" rel="noopener noreferrer" aria-label="SwiftPDF source on GitHub, opens in a new tab">Repository</a>
+      </p>
+    </article>
+
+    <article class="row" data-reveal>
+      <p class="row__num">P-03</p>
+      <h3 class="row__title">Pdf-tools</h3>
+      <p class="row__desc">The earlier front-end-only converter, and the reason SwiftPDF exists. Merge, split, compress and image-to-PDF with no backend at all. Keeping it around because it shows how much of the PDF surface can be covered without a server.</p>
+      <ul class="chips">
+        <li class="chip">HTML</li><li class="chip">CSS</li><li class="chip">JavaScript</li><li class="chip">Client-side processing</li>
+      </ul>
+      <p class="row__links">
+        <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/Pdf-tools" target="_blank" rel="noopener noreferrer" aria-label="Pdf-tools source on GitHub, opens in a new tab">Repository</a>
+      </p>
+    </article>
+  </section>
+
+  <!-- ---------------------------------------------------------------- skills -->
+  <section class="section" id="skills" aria-labelledby="skills-title" data-reveal>
+    <div class="section__head">
+      <p class="section__num">Section 03</p>
+      <h2 class="section__title" id="skills-title">Skills</h2>
+    </div>
+
+    <p class="section__note">Bars are a self-assessed read of where each sits today. Labels say why.</p>
+
+    <table class="skill-table">
+      <caption class="visually-hidden">Skills and current level</caption>
+      <tbody>
+        <tr>
+          <th scope="row">AI &amp; Machine Learning</th>
+          <td><div class="meter" style="--pct: 90%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">expert &middot; 90%</td>
+        </tr>
+        <tr>
+          <th scope="row">Python</th>
+          <td><div class="meter" style="--pct: 80%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">certified &middot; building &middot; 80%</td>
+        </tr>
+        <tr>
+          <th scope="row">JavaScript &amp; TypeScript</th>
+          <td><div class="meter" style="--pct: 78%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">building &middot; 78%</td>
+        </tr>
+        <tr>
+          <th scope="row">HTML &amp; CSS</th>
+          <td><div class="meter" style="--pct: 85%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">building &middot; 85%</td>
+        </tr>
+        <tr>
+          <th scope="row">React &amp; React Router</th>
+          <td><div class="meter" style="--pct: 70%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">building &middot; 70%</td>
+        </tr>
+        <tr>
+          <th scope="row">SQL &amp; SQLAlchemy</th>
+          <td><div class="meter" style="--pct: 65%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">building &middot; 65%</td>
+        </tr>
+        <tr>
+          <th scope="row">FastAPI &amp; JWT auth</th>
+          <td><div class="meter" style="--pct: 60%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">building &middot; 60%</td>
+        </tr>
+        <tr>
+          <th scope="row">Java</th>
+          <td><div class="meter" style="--pct: 55%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">certified &middot; coursework &middot; 55%</td>
+        </tr>
+        <tr>
+          <th scope="row">C</th>
+          <td><div class="meter" style="--pct: 50%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">coursework &middot; 50%</td>
+        </tr>
+        <tr>
+          <th scope="row">C++</th>
+          <td><div class="meter" style="--pct: 45%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">coursework &middot; 45%</td>
+        </tr>
+        <tr>
+          <th scope="row">Data Structures &amp; Algorithms</th>
+          <td><div class="meter" style="--pct: 55%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">coursework &middot; 55%</td>
+        </tr>
+        <tr>
+          <th scope="row">Git &amp; GitHub</th>
+          <td><div class="meter" style="--pct: 72%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">daily use &middot; 72%</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ------------------------------------------------------------- education -->
+  <section class="section" id="education" aria-labelledby="education-title" data-reveal>
+    <div class="section__head">
+      <p class="section__num">Section 04</p>
+      <h2 class="section__title" id="education-title">Education</h2>
+    </div>
+
+    <ol class="timeline">
+      <li>
+        <p class="timeline__period">2025 &ndash; 2029</p>
+        <h3 class="timeline__title">Vellore Institute of Technology, Amaravati</h3>
+        <p class="timeline__desc">Bachelor of Technology, undergraduate. VIT-AP. Coursework in programming languages (C, C++, Java, Python) and full-stack web development.</p>
+        <dl class="edu-ledger">
+          <div><dt>Degree</dt><dd>B.Tech, undergraduate</dd></div>
+          <div><dt>Campus</dt><dd>Amaravati, Andhra Pradesh</dd></div>
+          <div><dt>Status</dt><dd>In progress, first year</dd></div>
+          <div><dt>Focus</dt><dd>Programming, DSA, web development</dd></div>
+        </dl>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ---------------------------------------------------------- certificates -->
+  <section class="section" id="certificates" aria-labelledby="certificates-title" data-reveal>
+    <div class="section__head">
+      <p class="section__num">Section 05</p>
+      <h2 class="section__title" id="certificates-title">Certificates</h2>
+    </div>
+
+    <ul class="cert-list">
+      <li class="cert-row" data-reveal>
+        <p class="cert-row__issuer">IBM</p>
+        <div class="cert-row__body">
+          <p class="cert-row__name">Java programming</p>
+          <p class="cert-row__desc">Object-oriented programming in Java &mdash; classes and objects, collections, and exception handling.</p>
+        </div>
+        <p class="cert-row__meta">Credential available on request</p>
+      </li>
+      <li class="cert-row" data-reveal>
+        <p class="cert-row__issuer">Udemy</p>
+        <div class="cert-row__body">
+          <p class="cert-row__name">Python</p>
+          <p class="cert-row__desc">Core Python &mdash; syntax, functions, data structures, and working with files.</p>
+        </div>
+        <p class="cert-row__meta">Credential available on request</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- --------------------------------------------------------------- contact -->
+  <section class="section" id="contact" aria-labelledby="contact-title" data-reveal>
+    <div class="section__head">
+      <p class="section__num">Section 06</p>
+      <h2 class="section__title" id="contact-title">Contact</h2>
+    </div>
+
+    <div class="contact">
+      <p class="contact__heading">Got something worth building?</p>
+      <p class="contact__email"><a href="mailto:utkarsh6624@gmail.com">utkarsh6624@gmail.com</a></p>
+      <div class="contact__actions">
+        <button class="btn btn--solid" id="copyEmail" type="button" data-email="utkarsh6624@gmail.com">Copy email</button>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/utkarsh-choudhary-116a9736a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile, opens in a new tab">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile, opens in a new tab">GitHub</a>
+      </div>
+      <p class="visually-hidden" id="copyStatus" role="status" aria-live="polite"></p>
+      <noscript>
+        <p class="section__note">The copy button needs JavaScript. The address above is plain text &mdash; select it and copy.</p>
+      </noscript>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Utkarsh Choudhary &middot; Prayagraj, India</p>
+  <p>&copy; <span id="year">2026</span> &middot; Built by hand, no framework.</p>
+</footer>
+</body>
+</html>
