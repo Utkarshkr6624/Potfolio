@@ -41,6 +41,7 @@ Nothing else to install, build or configure.
   - CampusPulse — https://github.com/Utkarshkr6624/campuspulse
   - SwiftPDF — https://github.com/Utkarshkr6624/swift_pdf
   - Pdf-tools — https://github.com/Utkarshkr6624/Pdf-tools
+  - PixelRush — https://pixel-rush-delta.vercel.app (live demo only, no public repo)
 - **Skills** — the `.skill-table` rows in `index.html`. Each percentage is
   written twice: `--pct` on the `.meter` drives the bar, and the same number
   appears in the `.skill-table__level` cell so the figure is never carried by
