@@ -47,6 +47,10 @@
   --tick-long: 13px;
 }
 
+/* Dark is re-drawn, not derived: light ink on a warm near-black paper, and
+   both accents re-pitched so the rust and the teal keep their weight against
+   it. Only these seven tokens change — the head script has already set
+   data-theme before this file is parsed, so the swap costs no reflow. */
 :root[data-theme="dark"] {
   --bg: #12100D;
   --panel: #1B1814;
@@ -208,7 +212,9 @@ section[id] {
   text-transform: uppercase;
 }
 
-/* Available to screen readers, invisible on the page, still focusable-safe. */
+/* Available to screen readers, invisible on the page. Never applied to a
+   focusable control — a link or button clipped to 1px is still reachable by
+   keyboard with no way to see it. */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -980,7 +986,7 @@ section[id] {
 }
 
 /* --------------------------------------------------------------------------
-   16. Chips — inline tags; the one place a pill radius is allowed
+   16. Chips — inline tags; the one place a full pill radius is allowed
    -------------------------------------------------------------------------- */
 
 .chip {
@@ -1009,7 +1015,9 @@ section[id] {
   border-top: 1px solid var(--rule);
 }
 
-/* Elapsed portion of the axis: 2025 to today across a 2025–2029 span. */
+/* Elapsed portion of the axis: a fixed quarter of the span, so the accent
+   reads as time begun rather than a progress bar that would have to be
+   re-measured. It does not track today's date. */
 .timeline::before {
   content: "";
   position: absolute;
@@ -1140,6 +1148,18 @@ section[id] {
   font-size: 1.05rem;
 }
 
+/* The title is the link. It borrows the .row__title idiom — no underline at
+   rest, accent on hover — so a clickable cert is not shouting about it. */
+.cert-row__name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cert-row__name a:hover,
+.cert-row__name a:focus-visible {
+  color: var(--accent);
+}
+
 .cert-row__desc {
   max-width: 58ch;
   margin-top: 0.3rem;
@@ -1154,6 +1174,16 @@ section[id] {
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.cert-row__link {
+  color: var(--muted);
+  text-decoration-color: var(--accent);
+}
+
+.cert-row__link:hover,
+.cert-row__link:focus-visible {
+  color: var(--accent);
 }
 
 .edu-ledger {
@@ -1380,6 +1410,9 @@ section[id] {
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
+  /* Near-zero durations, not `none`: the animation still runs and still lands
+     on its end state, so nothing is left parked at its from-state. !important
+     because everything they have to beat is more specific than `*`. */
   *,
   *::before,
   *::after {
@@ -1406,6 +1439,7 @@ section[id] {
     top: calc(var(--progress, 0) * 100%);
   }
 
+  /* The hover nudge is a movement, not a state change, so it goes entirely. */
   .row:hover .row__num,
   .row:focus-within .row__num {
     transform: none;
@@ -1417,6 +1451,10 @@ section[id] {
    -------------------------------------------------------------------------- */
 
 @media print {
+  /* The print palette is a third, hand-picked set — the reader's chosen theme
+     is not what gets printed. Panel flattens to white so a hover tint cannot
+     print as a grey slab, and both accents drop to plain ink or grey: a press
+     turns a screen hue muddy, and hairlines have to survive the raster. */
   :root,
   :root[data-theme="dark"] {
     --bg: #FFFFFF;
@@ -1430,6 +1468,10 @@ section[id] {
     color-scheme: light;
   }
 
+  /* Chrome and interaction: nothing here survives a sheet of paper. !important
+     is load-bearing — the mobile-nav breakpoint in section 22 comes later in
+     the file and sets `display` on the nav toggle at equal specificity, so a
+     print preview narrower than 780px would otherwise print the button. */
   .gauge,
   .skip,
   #navToggle,
@@ -1441,11 +1483,15 @@ section[id] {
     display: none !important;
   }
 
+  /* Point sizes, not rem: a print engine's root font size is its own default,
+     and the on-screen scale would print far too large. */
   body {
     background: #FFFFFF;
     font-size: 11pt;
   }
 
+  /* A block broken across a page edge loses the hairlines that hold it
+     together, so each hero and section is kept whole where it fits. */
   .hero,
   .section {
     padding: 1.25rem 0;

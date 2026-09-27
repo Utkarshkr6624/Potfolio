@@ -104,7 +104,8 @@
     var toggle = $('#themeToggle');
     if (!toggle) return;
 
-    // The visible label is the second span, or the button text if none.
+    // The span marked with data-theme-label owns the wording; without it we
+    // have to fall back to editing the button's own content.
     var label = toggle.querySelector('[data-theme-label]') || toggle;
 
     function render() {
@@ -113,7 +114,8 @@
       toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
       var text = dark ? 'Light theme' : 'Dark theme';
       if (label === toggle) {
-        // Reuse the glyph span if present so the icon is never clobbered.
+        // Rewrite an existing text node in place rather than replacing the
+        // button's content, so a sibling icon element survives.
         var textNode = null;
         for (var i = 0; i < toggle.childNodes.length; i++) {
           if (toggle.childNodes[i].nodeType === 3 && toggle.childNodes[i].nodeValue.trim()) {
@@ -241,6 +243,8 @@
           if (group) {
             var peers = $$('[data-reveal]', group);
             var index = peers.indexOf(el);
+            // The first peer fires immediately, and the delay is capped so a
+            // long list does not leave its tail waiting seconds.
             if (index > 0) el.style.transitionDelay = Math.min(index, 6) * 70 + 'ms';
           }
           el.classList.add('is-visible');
@@ -257,8 +261,9 @@
 
   /* ---------------------------------------------------------------------
      05  Meter fills
-         Each .meter holds a .meter__fill; reveal the fill (and any sibling
-         meters in the same section) once the meter scrolls into view.
+         Each .meter holds a .meter__fill. When reduced motion is on or
+         IntersectionObserver is missing there is nothing to wait for, so
+         every meter is filled up front instead.
      --------------------------------------------------------------------- */
 
   function initMeters() {
@@ -300,6 +305,10 @@
      06  Copy email
      --------------------------------------------------------------------- */
 
+  // Last-resort path for browsers with no navigator.clipboard, and for the
+  // insecure-context case where it exists but writeText() rejects. The
+  // textarea is parked off-screen because it has to be in the document and
+  // selectable for execCommand to see a selection at all.
   function legacyCopy(text) {
     var area = document.createElement('textarea');
     area.value = text;
@@ -436,8 +445,10 @@
         if (visible.length) setCurrent(visible[0]);
         else setCurrent(null);
       },
-      // A band across the upper third of the viewport: the section a reader
-      // is actually looking at wins the marker.
+      // A thin band from 20% to 30% of the viewport height. Keeping it narrow
+      // means tall sections do not straddle it — the one crossing the band
+      // is the section the reader is actually looking at, which wins the
+      // marker.
       { root: null, rootMargin: '-20% 0px -70% 0px', threshold: 0 }
     );
 
@@ -544,8 +555,9 @@
   if (body) init();
   else on(document, 'DOMContentLoaded', init);
 
-  // Re-run the "no stored preference" theme sync if the page is restored
-  // from the back/forward cache.
+  // A back/forward-cache restore replays the original markup, so re-apply
+  // the stored preference if there is one. With no stored preference the
+  // inline head script's system-derived value stands.
   on(window, 'pageshow', function () {
     if (storageGet(THEME_KEY)) setTheme(storageGet(THEME_KEY));
   });

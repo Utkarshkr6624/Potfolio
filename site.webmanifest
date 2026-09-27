@@ -1,0 +1,20 @@
+{
+  "name": "Utkarsh Choudhary",
+  "short_name": "UC Portfolio",
+  "description": "Utkarsh Choudhary is a developer in Prayagraj, India, studying B.Tech at VIT-AP. He builds complete web tools with React, Python and FastAPI — CampusPulse, SwiftPDF and Pdf-tools.",
+  "lang": "en",
+  "id": "https://utkarshchoudhary.dev/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F4F0E6",
+  "theme_color": "#F4F0E6",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23A03A22'/%3E%3Crect x='5' y='7' width='22' height='2' fill='%23EAE3D5'/%3E%3Crect x='5' y='14' width='16' height='2' fill='%23EAE3D5'/%3E%3Crect x='5' y='21' width='19' height='2' fill='%231F4E4A'/%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

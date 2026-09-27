@@ -5,13 +5,16 @@ ledger layout: hairline rules, monospace data labels, serif headlines.
 
 It is **zero-dependency static HTML, CSS and vanilla JavaScript**. There is no
 framework, no bundler, no npm install, no CDN, and no external webfonts — the
-page ships exactly the three files below plus one photo.
+page ships exactly the files listed below.
 
 ```
-index.html   markup + inline no-flash theme script
-styles.css   design tokens, layout, light/dark themes
-script.js    theme toggle, nav toggle, copy-email, reveal + meters, gauge rail
-photo.jpg    portrait used by the hero
+index.html         markup + inline no-flash theme script
+styles.css         design tokens, layout, light/dark themes
+script.js          theme toggle, nav toggle, copy-email, reveal + meters, gauge rail
+robots.txt         crawler rules and the sitemap pointer
+sitemap.xml        the one URL this site has, submitted to search engines
+site.webmanifest   install metadata (name, colours, display mode)
+photo.jpg          portrait used by the hero
 ```
 
 ## Running it
@@ -52,6 +55,43 @@ Nothing else to install, build or configure.
 - **Photo** — `photo.jpg` in this folder. Framing is tuned in `styles.css`
   under `.hero__figimg` via `object-position`; nudge that one value to
   recompose the crop without touching the markup.
+
+## SEO
+
+`index.html` carries a description meta tag, Open Graph and Twitter card tags,
+a `rel="canonical"`, and a JSON-LD block describing the person (name, job
+title, same social profiles, `sameAs` links). `robots.txt` allows everything
+and points at the sitemap; `sitemap.xml` lists the one page; the web manifest
+is linked for installability. All of it is hand-written and offline — nothing
+is fetched from a third party.
+
+### The domain is a placeholder
+
+Every absolute URL currently reads **`https://utkarshchoudhary.dev/`** so the
+tags are well-formed, but no such domain is registered yet. When the real one
+exists, replace it in these **nine** places and nowhere else:
+
+*In `index.html`:*
+1. the `rel="canonical"` link
+2. the `og:url` meta tag
+3. the `og:image` meta tag
+4. the `twitter:image` meta tag
+5. the `"url"` field in the JSON-LD block
+6. the `"image"` field in the JSON-LD block
+
+*Elsewhere:*
+7. `robots.txt` — the `Sitemap:` line (and the filename comment above it)
+8. `sitemap.xml` — the `<loc>` entry
+9. `site.webmanifest` — the `"id"` field
+
+The simplest check: search the project for `utkarshchoudhary.dev` before
+deploying. If it still turns up anywhere, something was missed.
+
+`og:image` and `twitter:image` are **absolute**, not relative. A relative
+`photo.jpg` works when you open the file locally but is rejected outright by
+Facebook, LinkedIn and X, which is the whole point of a share card. The photo
+is also a 3:4 portrait where these platforms want 1200x630; it renders, but a
+dedicated share image would look better.
 
 ## Notes
 

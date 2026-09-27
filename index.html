@@ -4,27 +4,53 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Utkarsh Choudhary — Developer, Prayagraj</title>
-<meta name="description" content="Utkarsh Choudhary is a developer in Prayagraj, India, studying B.Tech at VIT-AP. He builds complete web tools with React, Python and FastAPI — CampusPulse, SwiftPDF and Pdf-tools.">
 
-<!-- Open Graph / Twitter. Absolute og:url and og:image belong here once the site has a public domain. -->
+<!--
+  SEO / social metadata. Pure crawler-facing data: nothing here loads a resource, so it is
+  safe above the no-flash theme script below. This block ends before that script — the script
+  must stay the first <script> in the document.
+-->
+<meta name="description" content="B.Tech student at VIT-AP in Prayagraj, India, building full-stack web tools with React, TypeScript and Python/FastAPI — CampusPulse, SwiftPDF, Pdf-tools.">
+<meta name="author" content="Utkarsh Choudhary">
+<!-- max-image-preview:large opts this page into full-size image previews in image search. -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<!-- Keywords are ignored by every major engine; kept as cheap, harmless context only. -->
+<meta name="keywords" content="Utkarsh Choudhary, web developer, full-stack developer, React, TypeScript, Python, FastAPI, Prayagraj, India, portfolio">
+<!-- PLACEHOLDER DOMAIN: no domain is registered yet. Update this and every absolute URL below (og:url, og:image, twitter:image) together once one exists. -->
+<link rel="canonical" href="https://utkarshchoudhary.dev/">
+
+<!-- Open Graph / Twitter. og:url and the image URLs must be absolute — relative paths like "photo.jpg" are rejected by most crawlers. -->
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Utkarsh Choudhary">
+<meta property="og:url" content="https://utkarshchoudhary.dev/">
 <meta property="og:title" content="Utkarsh Choudhary — Developer, Prayagraj">
-<meta property="og:description" content="B.Tech student at VIT-AP building complete web tools with React, Python and FastAPI. CampusPulse, SwiftPDF, Pdf-tools.">
-<meta property="og:image" content="photo.jpg">
+<meta property="og:description" content="B.Tech student at VIT-AP building full-stack web tools with React, TypeScript and Python/FastAPI. CampusPulse, SwiftPDF, Pdf-tools.">
+<!-- photo.jpg is a portrait, so cards render small and cropped. A dedicated 1200x630 share image is the real long-term fix. -->
+<meta property="og:image" content="https://utkarshchoudhary.dev/photo.jpg">
 <meta property="og:image:alt" content="Portrait of Utkarsh Choudhary">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Utkarsh Choudhary — Developer, Prayagraj">
-<meta name="twitter:description" content="B.Tech student at VIT-AP building complete web tools with React, Python and FastAPI.">
-<meta name="twitter:image" content="photo.jpg">
+<meta name="twitter:description" content="B.Tech student at VIT-AP building full-stack web tools with React, TypeScript and Python/FastAPI.">
+<meta name="twitter:image" content="https://utkarshchoudhary.dev/photo.jpg">
+<meta name="twitter:image:alt" content="Portrait of Utkarsh Choudhary">
+<!-- End of the SEO / social metadata block. -->
+
+<!-- Tells the UA that both themes are supported. The two theme-color values are the --bg tokens from styles.css; keep them in step if the paper/ink colours ever change. -->
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F4F0E6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12100D" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="site.webmanifest">
 
 <!-- Favicon: a rust ledger tab with a slate rule, drawn inline so the file stays dependency-free. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23A03A22'/%3E%3Crect x='5' y='7' width='22' height='2' fill='%23EAE3D5'/%3E%3Crect x='5' y='14' width='16' height='2' fill='%23EAE3D5'/%3E%3Crect x='5' y='21' width='19' height='2' fill='%231F4E4A'/%3E%3C/svg%3E">
 
 <!--
-  No-flash theme. This must stay INLINE and run BEFORE the stylesheet: it blocks parsing,
-  so the page never paints in the wrong theme. Without it a dark-mode visitor gets a
-  white flash on every load. Keep it here, keep it first.
+  No-flash theme. This must stay INLINE, stay the FIRST <script> in the document, and stay
+  above styles.css: it blocks parsing, so the theme is set before the page ever paints.
+  Without it a dark-mode visitor gets a white flash on every load.
+  Nothing that could delay it may be inserted above this point — no stylesheet, no external
+  or synchronous script, no preconnect. The crawler metadata above is the only thing allowed
+  to sit here, because meta tags load no resource.
 -->
 <script>
   (function () {
@@ -57,6 +83,53 @@
 </head>
 
 <body>
+<!--
+  Structured data for search engines. Lives in the body because the brief scopes
+  this page's JSON-LD here; crawlers read it wherever it appears. The url and image
+  are absolute against the placeholder domain — swap that one base for the real
+  domain once the site has one, and nothing else in the block needs touching.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Utkarsh Choudhary",
+  "jobTitle": "Full-Stack Web Developer",
+  "url": "https://utkarshchoudhary.dev/",
+  "image": "https://utkarshchoudhary.dev/photo.jpg",
+  "email": "mailto:utkarsh6624@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Prayagraj",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Vellore Institute of Technology"
+  },
+  "knowsAbout": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Python",
+    "FastAPI",
+    "SQLAlchemy",
+    "SQLite",
+    "SQL",
+    "Vite",
+    "JWT authentication",
+    "HTML",
+    "CSS",
+    "Git"
+  ],
+  "sameAs": [
+    "https://github.com/Utkarshkr6624",
+    "https://www.linkedin.com/in/utkarsh-choudhary-116a9736a"
+  ]
+}
+</script>
+
 <a class="skip" href="#main">Skip to content</a>
 
 <div class="gauge" aria-hidden="true"><span class="gauge-dot"></span></div>
@@ -95,6 +168,7 @@
 <main id="main" tabindex="-1">
 
   <!-- ------------------------------------------------------------------ hero -->
+  <!-- Who this is and what he does, plus the portrait. Carries the page's only h1. -->
   <section class="hero" aria-labelledby="hero-name">
     <div class="hero__text">
       <p class="hero__slug">PRAYAGRAJ, INDIA &middot; B.TECH VIT-AP 2025&ndash;2029</p>
@@ -134,6 +208,7 @@
   </section>
 
   <!-- ------------------------------------------------------------------ work -->
+  <!-- One article per project: what it does, the stack, and a demo/repo link out. -->
   <section class="section" id="work" aria-labelledby="work-title" data-reveal>
     <div class="section__head">
       <p class="section__num">Section 02</p>
@@ -195,6 +270,16 @@
           <th scope="row">AI &amp; Machine Learning</th>
           <td><div class="meter" style="--pct: 90%"><span class="meter__fill"></span></div></td>
           <td class="skill-table__level">expert &middot; 90%</td>
+        </tr>
+        <tr>
+          <th scope="row">Front end &mdash; React, TypeScript, UI</th>
+          <td><div class="meter" style="--pct: 88%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">master &middot; 88%</td>
+        </tr>
+        <tr>
+          <th scope="row">Back end &mdash; Python, FastAPI, SQL</th>
+          <td><div class="meter" style="--pct: 78%"><span class="meter__fill"></span></div></td>
+          <td class="skill-table__level">master &middot; 78%</td>
         </tr>
         <tr>
           <th scope="row">Python</th>
@@ -284,27 +369,41 @@
       <h2 class="section__title" id="certificates-title">Certificates</h2>
     </div>
 
+    <!--
+      Owner-maintained: each row is one credential, and the title and the
+      "View credential" link point at the same issuer URL. Add or retire a
+      certificate by editing a row here, not via script.
+    -->
     <ul class="cert-list">
       <li class="cert-row" data-reveal>
         <p class="cert-row__issuer">IBM</p>
         <div class="cert-row__body">
-          <p class="cert-row__name">Java programming</p>
+          <p class="cert-row__name"><a href="https://www.coursera.org/account/accomplishments/verify/CJST3EKNYXES" target="_blank" rel="noopener noreferrer" aria-label="IBM Java programming certificate on Coursera, opens in a new tab">Java programming</a></p>
           <p class="cert-row__desc">Object-oriented programming in Java &mdash; classes and objects, collections, and exception handling.</p>
         </div>
-        <p class="cert-row__meta">Credential available on request</p>
+        <p class="cert-row__meta"><a class="cert-row__link" href="https://www.coursera.org/account/accomplishments/verify/CJST3EKNYXES" target="_blank" rel="noopener noreferrer">View credential</a></p>
       </li>
       <li class="cert-row" data-reveal>
         <p class="cert-row__issuer">Udemy</p>
         <div class="cert-row__body">
-          <p class="cert-row__name">Python</p>
+          <p class="cert-row__name"><a href="https://www.udemy.com/certificate/UC-733fae8a-fc84-4788-b1bc-68ac54c145a2/" target="_blank" rel="noopener noreferrer" aria-label="Udemy Python certificate, opens in a new tab">Python</a></p>
           <p class="cert-row__desc">Core Python &mdash; syntax, functions, data structures, and working with files.</p>
         </div>
-        <p class="cert-row__meta">Credential available on request</p>
+        <p class="cert-row__meta"><a class="cert-row__link" href="https://www.udemy.com/certificate/UC-733fae8a-fc84-4788-b1bc-68ac54c145a2/" target="_blank" rel="noopener noreferrer">View credential</a></p>
+      </li>
+      <li class="cert-row" data-reveal>
+        <p class="cert-row__issuer">Google</p>
+        <div class="cert-row__body">
+          <p class="cert-row__name"><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/XLGDRPBO1W50" target="_blank" rel="noopener noreferrer" aria-label="Google AI Essentials certificate on Coursera, opens in a new tab">AI Essentials</a></p>
+          <p class="cert-row__desc">Generative AI foundations &mdash; how large language models work, writing effective prompts, and where AI fits into real applications.</p>
+        </div>
+        <p class="cert-row__meta"><a class="cert-row__link" href="https://www.coursera.org/account/accomplishments/specialization/certificate/XLGDRPBO1W50" target="_blank" rel="noopener noreferrer">View credential</a></p>
       </li>
     </ul>
   </section>
 
   <!-- --------------------------------------------------------------- contact -->
+  <!-- Every way to reach him. The email is plain text on purpose, so it works with JS off. -->
   <section class="section" id="contact" aria-labelledby="contact-title" data-reveal>
     <div class="section__head">
       <p class="section__num">Section 06</p>

@@ -1,0 +1,12 @@
+# robots.txt for utkarshchoudhary.dev
+#
+# The domain on the Sitemap line below is a placeholder — the site has no public
+# domain yet. Replace it with the real one (and keep every other file's absolute
+# URLs in sync) once a domain is registered.
+#
+# No Disallow rules: the whole site is a single public page, so there is nothing
+# here worth hiding and a crawler is free to read all of it.
+User-agent: *
+Allow: /
+
+Sitemap: https://utkarshchoudhary.dev/sitemap.xml
