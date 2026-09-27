@@ -490,7 +490,7 @@ section[id] {
 
 .hero {
   display: grid;
-  grid-template-columns: 7fr 5fr;
+  grid-template-columns: 7fr 4fr;
   align-items: end;
   gap: clamp(2rem, 5vw, 5rem);
   padding: clamp(3rem, 9vh, 7rem) var(--gutter) clamp(3rem, 7vh, 5.5rem);
@@ -550,11 +550,15 @@ section[id] {
   border-top: 1px solid var(--rule);
 }
 
-/* Portrait plate: hairline border with a small rust corner bracket. */
+/* Portrait plate: hairline border, rounded corners. Kept deliberately small
+   next to the name — the headline is the subject, the photo is the proof. */
 .hero__figure {
   position: relative;
   margin: 0;
   align-self: end;
+  justify-self: center;
+  max-width: 17rem;
+  width: 100%;
 }
 
 .hero__figimg {
@@ -567,31 +571,8 @@ section[id] {
      top third, which is the composition. */
   object-position: 50% 30%;
   border: 1px solid var(--rule);
+  border-radius: 1.5rem;
   background: var(--panel);
-}
-
-.hero__figure::before,
-.hero__figure::after {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border: 1px solid var(--accent);
-  pointer-events: none;
-}
-
-.hero__figure::before {
-  top: -7px;
-  left: -7px;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.hero__figure::after {
-  right: -7px;
-  bottom: -7px;
-  border-left: 0;
-  border-top: 0;
 }
 
 .hero__figure figcaption {
@@ -610,7 +591,7 @@ section[id] {
   }
 
   .hero__figure {
-    max-width: 22rem;
+    max-width: 15rem;
   }
 }
 
