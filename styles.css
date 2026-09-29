@@ -922,6 +922,44 @@ section[id] {
   transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+/* Above ~900px the row gains a third column and the stack and links move
+   into it. With one project per band that column would otherwise sit empty
+   for most of the row's height; putting the metadata on the right keeps each
+   project a single screen-tall band instead of a tower, which is what stops
+   the list from reading as a wall as projects are added.
+
+   Placement is explicit rather than auto-placed: the base rule above forces
+   every child into column 2, and letting the browser pack these two into
+   column 3 by hand would make the order depend on source order. */
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: 4.5rem minmax(0, 1fr) 15rem;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .row > .row__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .row > .row__desc {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .row > .chips {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-content: start;
+  }
+
+  .row > .row__links {
+    grid-column: 3;
+    grid-row: 3;
+    align-self: end;
+  }
+}
+
 .row:hover .row__num,
 .row:focus-within .row__num {
   transform: translateX(4px);

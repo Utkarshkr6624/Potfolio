@@ -10,7 +10,7 @@
   safe above the no-flash theme script below. This block ends before that script — the script
   must stay the first <script> in the document.
 -->
-<meta name="description" content="B.Tech student at VIT-AP in Prayagraj, India, building full-stack web tools with React, TypeScript and Python/FastAPI — CampusPulse, SwiftPDF, Pdf-tools.">
+<meta name="description" content="B.Tech student at VIT-AP in Prayagraj, India, building web tools with React, TypeScript, Python and FastAPI — CampusPulse, SwiftPDF, PixelRush, ResumeBoard.">
 <meta name="author" content="Utkarsh Choudhary">
 <!-- max-image-preview:large opts this page into full-size image previews in image search. -->
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Utkarsh Choudhary">
 <meta property="og:url" content="https://utkarshchoudhary.dev/">
 <meta property="og:title" content="Utkarsh Choudhary — Developer, Prayagraj">
-<meta property="og:description" content="B.Tech student at VIT-AP building full-stack web tools with React, TypeScript and Python/FastAPI. CampusPulse, SwiftPDF, Pdf-tools.">
+<meta property="og:description" content="B.Tech student at VIT-AP building full-stack web tools with React, TypeScript and Python/FastAPI. CampusPulse, SwiftPDF, PixelRush, ResumeBoard.">
 <!-- photo.jpg is a portrait, so cards render small and cropped. A dedicated 1200x630 share image is the real long-term fix. -->
 <meta property="og:image" content="https://utkarshchoudhary.dev/photo.jpg">
 <meta property="og:image:alt" content="Portrait of Utkarsh Choudhary">
@@ -194,7 +194,7 @@
       <h2 class="section__title" id="about-title">About</h2>
     </div>
 
-    <p class="lede">I build small, complete tools and put them online. Most of my work is a front end talking to a real API and a real database. CampusPulse started as a way to stop losing track of my own coursework; SwiftPDF and Pdf-tools came from needing the same PDF operation twice and not finding a version that stayed in the browser; PixelRush is what happened when I stopped waiting for a reason to build a game. I am four years into a B.Tech at VIT-AP, and I care more about the last mile &mdash; does the thing actually run &mdash; than about picking a fashionable stack.</p>
+    <p class="lede">I build small, complete tools and put them online. Most of my work is a front end talking to a real API and a real database. CampusPulse started as a way to stop losing track of my own coursework; SwiftPDF came from needing the same PDF operation twice and not finding a version that stayed in the browser. PixelRush and ResumeBoard are that same instinct pointed somewhere else &mdash; build the thing you actually wanted, keep it client-side, and make sure it runs. I am four years into a B.Tech at VIT-AP, and I care more about the last mile &mdash; does the thing actually run &mdash; than about picking a fashionable stack.</p>
 
     <table class="fact-table">
       <caption class="visually-hidden">Key facts</caption>
@@ -208,7 +208,11 @@
   </section>
 
   <!-- ------------------------------------------------------------------ work -->
-  <!-- One article per project: what it does, the stack, and a demo/repo link out. -->
+  <!-- One article per project: what it does, the stack, and a demo/repo link out.
+       The stack chips and the links live in a right-hand column on wide screens
+       (see the .row grid in styles.css) so a project reads as one banded row
+       rather than a tall block. Keep each description to two sentences; the
+       full case for the project belongs in the repo, not here. -->
   <section class="section" id="work" aria-labelledby="work-title" data-reveal>
     <div class="section__head">
       <p class="section__num">Section 02</p>
@@ -218,9 +222,9 @@
     <article class="row" data-reveal>
       <p class="row__num">P-01</p>
       <h3 class="row__title">CampusPulse</h3>
-      <p class="row__desc">A student academic planner. Semesters, courses, assessments, grades, attendance and exam schedule in one place, with file uploads against each course and a what-if calculator for your GPA. The FastAPI backend uses SQLAlchemy over SQLite with JWT auth; the React client is TypeScript on Vite with React Router. Covered by pytest tests, and the folder carries an architecture document.</p>
+      <p class="row__desc">A student academic planner &mdash; courses, assessments, grades, attendance and exam schedule in one place, with a what-if calculator for your GPA. FastAPI and SQLAlchemy over SQLite with JWT auth on the back, React and TypeScript on the front, covered by pytest.</p>
       <ul class="chips">
-        <li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Vite</li><li class="chip">Tailwind</li><li class="chip">React Router</li><li class="chip">FastAPI</li><li class="chip">SQLAlchemy</li><li class="chip">SQLite</li><li class="chip">JWT</li><li class="chip">pytest</li>
+        <li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">FastAPI</li><li class="chip">SQLAlchemy</li><li class="chip">pytest</li>
       </ul>
       <p class="row__links">
         <a class="btn btn--ghost" href="https://campuspulse-mu.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="CampusPulse live demo, opens in a new tab">Live demo</a>
@@ -231,9 +235,9 @@
     <article class="row" data-reveal>
       <p class="row__num">P-02</p>
       <h3 class="row__title">SwiftPDF</h3>
-      <p class="row__desc">A PDF toolkit that runs in the browser. Merge, split, compress, crop, image-to-PDF, page numbering and saved themes. The files never leave the machine you opened them on, which is the whole point when the documents are marksheets and certificates.</p>
+      <p class="row__desc">A PDF toolkit that runs entirely in the browser &mdash; merge, split, compress, crop, image-to-PDF, page numbering. The files never leave the machine you opened them on, which is the whole point when the documents are marksheets and certificates.</p>
       <ul class="chips">
-        <li class="chip">JavaScript</li><li class="chip">PDF manipulation</li><li class="chip">Client-side processing</li><li class="chip">Theming</li>
+        <li class="chip">JavaScript</li><li class="chip">PDF manipulation</li><li class="chip">Client-side</li>
       </ul>
       <p class="row__links">
         <a class="btn btn--ghost" href="https://swift-pdf-beta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="SwiftPDF live demo, opens in a new tab">Live demo</a>
@@ -243,25 +247,25 @@
 
     <article class="row" data-reveal>
       <p class="row__num">P-03</p>
-      <h3 class="row__title">Pdf-tools</h3>
-      <p class="row__desc">The earlier front-end-only converter, and the reason SwiftPDF exists. Merge, split, compress and image-to-PDF with no backend at all. Keeping it around because it shows how much of the PDF surface can be covered without a server.</p>
+      <h3 class="row__title">PixelRush</h3>
+      <p class="row__desc">A browser arcade of twenty-four games across six genres. No install, no account, no ads, no backend &mdash; and every game is a separate module loaded only when you play it, so adding one means writing one file.</p>
       <ul class="chips">
-        <li class="chip">HTML</li><li class="chip">CSS</li><li class="chip">JavaScript</li><li class="chip">Client-side processing</li>
+        <li class="chip">JavaScript</li><li class="chip">Vanilla JS</li><li class="chip">Lazy loading</li><li class="chip">No build step</li>
       </ul>
       <p class="row__links">
-        <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/Pdf-tools" target="_blank" rel="noopener noreferrer" aria-label="Pdf-tools source on GitHub, opens in a new tab">Repository</a>
+        <a class="btn btn--ghost" href="https://pixel-rush-delta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="PixelRush live demo, opens in a new tab">Live demo</a>
       </p>
     </article>
 
     <article class="row" data-reveal>
       <p class="row__num">P-04</p>
-      <h3 class="row__title">PixelRush</h3>
-      <p class="row__desc">A browser arcade of twenty-four games across six genres &mdash; arcade reflex, puzzle logic, racing, strategy, casual and sports. No install, no account, no ads, no backend: every cabinet boots in a second in one tab. The shell is hand-written vanilla JavaScript with no framework and no build step, and each game is a separate module loaded only when you actually play it, behind a single start(root, api) contract, with highscores kept in localStorage. The proof it is finished is that adding a game means writing one file.</p>
+      <h3 class="row__title">ResumeBoard</h3>
+      <p class="row__desc">Paste a LinkedIn export and get a complete, editable resume in about a minute. Every word stays editable on the page, exports go to PDF, Word, Markdown and JSON with no watermark, and the ATS check names the exact line that breaks a parser &mdash; all of it in IndexedDB, with no server to send your resume to.</p>
       <ul class="chips">
-        <li class="chip">JavaScript</li><li class="chip">Vanilla JS</li><li class="chip">HTML</li><li class="chip">CSS</li><li class="chip">Lazy loading</li><li class="chip">localStorage</li><li class="chip">No build step</li><li class="chip">Game engine</li>
+        <li class="chip">JavaScript</li><li class="chip">IndexedDB</li><li class="chip">DOCX export</li><li class="chip">No build step</li>
       </ul>
       <p class="row__links">
-        <a class="btn btn--ghost" href="https://pixel-rush-delta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="PixelRush live demo, opens in a new tab">Live demo</a>
+        <a class="btn btn--ghost" href="https://resumeboard.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="ResumeBoard live demo, opens in a new tab">Live demo</a>
       </p>
     </article>
   </section>
