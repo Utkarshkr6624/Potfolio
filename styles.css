@@ -1027,6 +1027,57 @@ section[id] {
   }
 }
 
+/* Carousel-specific overrides — narrower cards need 2-col layout, not 3 */
+.projects-track .row {
+  flex: 0 0 calc(20% - 0.8rem);
+  min-width: 260px;
+  max-width: 320px;
+}
+
+@media (min-width: 900px) {
+  .projects-track .row {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .projects-track .row > .row__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .projects-track .row > .row__desc {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .projects-track .row > .chips {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0.5rem;
+  }
+
+  .projects-track .row > .row__links {
+    grid-column: 2;
+    grid-row: 4;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Ensure text wraps in narrow carousel cards */
+.projects-track .row__desc {
+  max-width: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.projects-track .chips {
+  justify-content: flex-start;
+}
+
+.projects-track .row__links {
+  justify-content: flex-start;
+}
+
 /* --------------------------------------------------------------------------
    15b. Projects Carousel — horizontal scroll with 5 visible items
    -------------------------------------------------------------------------- */
