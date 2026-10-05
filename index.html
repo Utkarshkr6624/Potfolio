@@ -219,55 +219,84 @@
       <h2 class="section__title" id="work-title">Work</h2>
     </div>
 
-    <article class="row" data-reveal>
-      <p class="row__num">P-01</p>
-      <h3 class="row__title">CampusPulse</h3>
-      <p class="row__desc">A student academic planner &mdash; courses, assessments, grades, attendance and exam schedule in one place, with a what-if calculator for your GPA. FastAPI and SQLAlchemy over SQLite with JWT auth on the back, React and TypeScript on the front, covered by pytest.</p>
-      <ul class="chips">
-        <li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">FastAPI</li><li class="chip">SQLAlchemy</li><li class="chip">pytest</li>
-      </ul>
-      <p class="row__links">
-        <a class="btn btn--ghost" href="https://campuspulse-mu.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="CampusPulse live demo, opens in a new tab">Live demo</a>
-        <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/campuspulse" target="_blank" rel="noopener noreferrer" aria-label="CampusPulse source on GitHub, opens in a new tab">Repository</a>
-      </p>
-    </article>
+    <!-- Horizontal scrollable project carousel -->
+    <div class="projects-carousel" data-reveal>
+      <button class="carousel-btn carousel-btn--prev" aria-label="Previous project" type="button">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" focusable="false">
+          <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <div class="projects-track" role="list">
+        <article class="row" role="listitem" data-reveal>
+          <p class="row__num">P-01</p>
+          <h3 class="row__title">Nexus</h3>
+          <p class="row__desc">A modular developer toolkit — unified CLI, config, and plugin system for scaffolding, linting, and shipping full-stack apps. TypeScript-first with zero-runtime overhead.</p>
+          <ul class="chips">
+            <li class="chip">TypeScript</li><li class="chip">CLI</li><li class="chip">Plugin System</li><li class="chip">Zero Runtime</li>
+          </ul>
+          <p class="row__links">
+            <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/Nexus" target="_blank" rel="noopener noreferrer" aria-label="Nexus source on GitHub, opens in a new tab">Repository</a>
+          </p>
+        </article>
 
-    <article class="row" data-reveal>
-      <p class="row__num">P-02</p>
-      <h3 class="row__title">SwiftPDF</h3>
-      <p class="row__desc">A PDF toolkit that runs entirely in the browser &mdash; merge, split, compress, crop, image-to-PDF, page numbering. The files never leave the machine you opened them on, which is the whole point when the documents are marksheets and certificates.</p>
-      <ul class="chips">
-        <li class="chip">JavaScript</li><li class="chip">PDF manipulation</li><li class="chip">Client-side</li>
-      </ul>
-      <p class="row__links">
-        <a class="btn btn--ghost" href="https://swift-pdf-beta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="SwiftPDF live demo, opens in a new tab">Live demo</a>
-        <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/swift_pdf" target="_blank" rel="noopener noreferrer" aria-label="SwiftPDF source on GitHub, opens in a new tab">Repository</a>
-      </p>
-    </article>
+        <article class="row" role="listitem" data-reveal>
+          <p class="row__num">P-02</p>
+          <h3 class="row__title">CampusPulse</h3>
+          <p class="row__desc">A student academic planner — courses, assessments, grades, attendance and exam schedule in one place, with a what-if calculator for your GPA. FastAPI and SQLAlchemy over SQLite with JWT auth on the back, React and TypeScript on the front, covered by pytest.</p>
+          <ul class="chips">
+            <li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">FastAPI</li><li class="chip">SQLAlchemy</li><li class="chip">pytest</li>
+          </ul>
+          <p class="row__links">
+            <a class="btn btn--ghost" href="https://campuspulse-mu.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="CampusPulse live demo, opens in a new tab">Live demo</a>
+            <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/campuspulse" target="_blank" rel="noopener noreferrer" aria-label="CampusPulse source on GitHub, opens in a new tab">Repository</a>
+          </p>
+        </article>
 
-    <article class="row" data-reveal>
-      <p class="row__num">P-03</p>
-      <h3 class="row__title">PixelRush</h3>
-      <p class="row__desc">A browser arcade of twenty-four games across six genres. No install, no account, no ads, no backend &mdash; and every game is a separate module loaded only when you play it, so adding one means writing one file.</p>
-      <ul class="chips">
-        <li class="chip">JavaScript</li><li class="chip">Vanilla JS</li><li class="chip">Lazy loading</li><li class="chip">No build step</li>
-      </ul>
-      <p class="row__links">
-        <a class="btn btn--ghost" href="https://pixel-rush-delta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="PixelRush live demo, opens in a new tab">Live demo</a>
-      </p>
-    </article>
+        <article class="row" role="listitem" data-reveal>
+          <p class="row__num">P-03</p>
+          <h3 class="row__title">SwiftPDF</h3>
+          <p class="row__desc">A PDF toolkit that runs entirely in the browser — merge, split, compress, crop, image-to-PDF, page numbering. The files never leave the machine you opened them on, which is the whole point when the documents are marksheets and certificates.</p>
+          <ul class="chips">
+            <li class="chip">JavaScript</li><li class="chip">PDF manipulation</li><li class="chip">Client-side</li>
+          </ul>
+          <p class="row__links">
+            <a class="btn btn--ghost" href="https://swift-pdf-beta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="SwiftPDF live demo, opens in a new tab">Live demo</a>
+            <a class="btn btn--ghost" href="https://github.com/Utkarshkr6624/swift_pdf" target="_blank" rel="noopener noreferrer" aria-label="SwiftPDF source on GitHub, opens in a new tab">Repository</a>
+          </p>
+        </article>
 
-    <article class="row" data-reveal>
-      <p class="row__num">P-04</p>
-      <h3 class="row__title">ResumeBoard</h3>
-      <p class="row__desc">Paste a LinkedIn export and get a complete, editable resume in about a minute. Every word stays editable on the page, exports go to PDF, Word, Markdown and JSON with no watermark, and the ATS check names the exact line that breaks a parser &mdash; all of it in IndexedDB, with no server to send your resume to.</p>
-      <ul class="chips">
-        <li class="chip">JavaScript</li><li class="chip">IndexedDB</li><li class="chip">DOCX export</li><li class="chip">No build step</li>
-      </ul>
-      <p class="row__links">
-        <a class="btn btn--ghost" href="https://resumeboard.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="ResumeBoard live demo, opens in a new tab">Live demo</a>
-      </p>
-    </article>
+        <article class="row" role="listitem" data-reveal>
+          <p class="row__num">P-04</p>
+          <h3 class="row__title">PixelRush</h3>
+          <p class="row__desc">A browser arcade of twenty-four games across six genres. No install, no account, no ads, no backend — and every game is a separate module loaded only when you play it, so adding one means writing one file.</p>
+          <ul class="chips">
+            <li class="chip">JavaScript</li><li class="chip">Vanilla JS</li><li class="chip">Lazy loading</li><li class="chip">No build step</li>
+          </ul>
+          <p class="row__links">
+            <a class="btn btn--ghost" href="https://pixel-rush-delta.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="PixelRush live demo, opens in a new tab">Live demo</a>
+          </p>
+        </article>
+
+        <article class="row" role="listitem" data-reveal>
+          <p class="row__num">P-05</p>
+          <h3 class="row__title">ResumeBoard</h3>
+          <p class="row__desc">Paste a LinkedIn export and get a complete, editable resume in about a minute. Every word stays editable on the page, exports go to PDF, Word, Markdown and JSON with no watermark, and the ATS check names the exact line that breaks a parser — all of it in IndexedDB, with no server to send your resume to.</p>
+          <ul class="chips">
+            <li class="chip">JavaScript</li><li class="chip">IndexedDB</li><li class="chip">DOCX export</li><li class="chip">No build step</li>
+          </ul>
+          <p class="row__links">
+            <a class="btn btn--ghost" href="https://resumeboard.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="ResumeBoard live demo, opens in a new tab">Live demo</a>
+          </p>
+        </article>
+      </div>
+
+      <button class="carousel-btn carousel-btn--next" aria-label="Next project" type="button">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" focusable="false">
+          <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
   </section>
 
   <!-- ---------------------------------------------------------------- skills -->

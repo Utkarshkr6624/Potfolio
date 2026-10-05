@@ -899,6 +899,8 @@ section[id] {
   border-top: 1px solid var(--rule);
   color: inherit;
   transition: background-color 0.25s ease;
+  flex: 0 0 calc(20% - 1rem); /* 5 projects visible at a time with gap */
+  min-width: 280px;
 }
 
 .row:last-of-type {
@@ -1020,6 +1022,139 @@ section[id] {
   .row {
     grid-template-columns: 2.75rem minmax(0, 1fr);
     padding-inline: 0;
+    flex: 0 0 calc(100% - 1rem);
+    min-width: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15b. Projects Carousel — horizontal scroll with 5 visible items
+   -------------------------------------------------------------------------- */
+
+.projects-carousel {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+
+.projects-track {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+
+.projects-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects-track::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 4px;
+}
+
+.projects-track::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+.row[role="listitem"] {
+  scroll-snap-align: start;
+}
+
+.carousel-btn {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--panel);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.carousel-btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.carousel-btn--prev {
+  margin-right: -1.75rem;
+  border-right: none;
+  background: linear-gradient(to right, var(--bg) 50%, transparent);
+}
+
+.carousel-btn--next {
+  margin-left: -1.75rem;
+  border-left: none;
+  background: linear-gradient(to left, var(--bg) 50%, transparent);
+}
+
+@media (max-width: 780px) {
+  .carousel-btn {
+    display: none;
+  }
+  
+  .projects-carousel {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Gradient fade masks for visual indication of scrollable content */
+.projects-carousel::before,
+.projects-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6rem;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.projects-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.projects-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+@media (max-width: 780px) {
+  .projects-carousel::before,
+  .projects-carousel::after {
+    display: none;
   }
 }
 

@@ -537,6 +537,77 @@
   }
 
   /* ---------------------------------------------------------------------
+     11  Projects Carousel — horizontal scroll with prev/next buttons
+     --------------------------------------------------------------------- */
+
+  function initProjectsCarousel() {
+    var carousel = $('.projects-carousel');
+    if (!carousel) return;
+
+    var track = $('.projects-track', carousel);
+    var prevBtn = $('.carousel-btn--prev', carousel);
+    var nextBtn = $('.carousel-btn--next', carousel);
+    if (!track || !prevBtn || !nextBtn) return;
+
+    // Calculate scroll amount based on visible item width + gap
+    function getScrollAmount() {
+      var firstItem = track.querySelector('[role="listitem"]');
+      if (!firstItem) return 300;
+      var style = window.getComputedStyle(firstItem);
+      var gap = parseFloat(style.marginRight) || 16;
+      return firstItem.offsetWidth + gap;
+    }
+
+    function scrollTrack(direction) {
+      var amount = getScrollAmount() * 5; // Scroll 5 items at a time
+      track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    }
+
+    function updateButtons() {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      var atStart = track.scrollLeft <= 10;
+      var atEnd = track.scrollLeft >= maxScroll - 10;
+
+      prevBtn.disabled = atStart;
+      nextBtn.disabled = atEnd;
+
+      prevBtn.style.opacity = atStart ? '0.3' : '1';
+      prevBtn.style.pointerEvents = atStart ? 'none' : 'auto';
+      nextBtn.style.opacity = atEnd ? '0.3' : '1';
+      nextBtn.style.pointerEvents = atEnd ? 'none' : 'auto';
+    }
+
+    on(prevBtn, 'click', function () { scrollTrack(-1); });
+    on(nextBtn, 'click', function () { scrollTrack(1); });
+
+    // Update buttons on scroll
+    on(track, 'scroll', function () {
+      if (track._scrollTimer) return;
+      track._scrollTimer = setTimeout(function () {
+        updateButtons();
+        track._scrollTimer = null;
+      }, 50);
+    }, { passive: true });
+
+    // Update on resize
+    on(window, 'resize', updateButtons);
+
+    // Keyboard navigation
+    on(track, 'keydown', function (event) {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        scrollTrack(-1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        scrollTrack(1);
+      }
+    });
+
+    // Initial button state
+    updateButtons();
+  }
+
+  /* ---------------------------------------------------------------------
      Boot
      --------------------------------------------------------------------- */
 
@@ -550,6 +621,7 @@
     initProgressFallback();
     initYear();
     initExternalLinks();
+    initProjectsCarousel();
   }
 
   if (body) init();
