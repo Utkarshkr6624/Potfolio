@@ -559,7 +559,7 @@
     }
 
     function scrollTrack(direction) {
-      var amount = getScrollAmount() * 5; // Scroll 5 items at a time
+      var amount = getScrollAmount() * 3; // Scroll 3 items at a time
       track.scrollBy({ left: direction * amount, behavior: 'smooth' });
     }
 

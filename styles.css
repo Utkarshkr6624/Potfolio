@@ -1029,9 +1029,9 @@ section[id] {
 
 /* Carousel-specific overrides — narrower cards need 2-col layout, not 3 */
 .projects-track .row {
-  flex: 0 0 calc(20% - 0.8rem);
-  min-width: 260px;
-  max-width: 320px;
+  flex: 0 0 calc(33.333% - 0.67rem);
+  min-width: 280px;
+  max-width: 380px;
 }
 
 @media (min-width: 900px) {
