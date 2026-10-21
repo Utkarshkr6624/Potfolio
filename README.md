@@ -67,11 +67,12 @@ and points at the sitemap; `sitemap.xml` lists the one page; the web manifest
 is linked for installability. All of it is hand-written and offline — nothing
 is fetched from a third party.
 
-### The domain is a placeholder
+### The domain
 
-Every absolute URL currently reads **`https://utkarshchoudhary.dev/`** so the
-tags are well-formed, but no such domain is registered yet. When the real one
-exists, replace it in these **nine** places and nowhere else:
+Every absolute URL reads **`https://potfolio-iota-ashy.vercel.app/`**, the live
+Vercel deployment. It must match the host the site is served from: Search
+Console rejects sitemap entries on any other domain ("URL not allowed"). If a
+custom domain is added later, replace it in these **nine** places and nowhere else:
 
 *In `index.html`:*
 1. the `rel="canonical"` link
@@ -86,8 +87,8 @@ exists, replace it in these **nine** places and nowhere else:
 8. `sitemap.xml` — the `<loc>` entry
 9. `site.webmanifest` — the `"id"` field
 
-The simplest check: search the project for `utkarshchoudhary.dev` before
-deploying. If it still turns up anywhere, something was missed.
+The simplest check: search the project for the old domain before deploying.
+If it still turns up anywhere, something was missed.
 
 `og:image` and `twitter:image` are **absolute**, not relative. A relative
 `photo.jpg` works when you open the file locally but is rejected outright by

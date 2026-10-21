@@ -1,4 +1,4 @@
-# robots.txt for utkarshchoudhary.dev
+# robots.txt for potfolio-iota-ashy.vercel.app
 #
 # The domain on the Sitemap line below is a placeholder — the site has no public
 # domain yet. Replace it with the real one (and keep every other file's absolute
@@ -9,4 +9,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://utkarshchoudhary.dev/sitemap.xml
+Sitemap: https://potfolio-iota-ashy.vercel.app/sitemap.xml

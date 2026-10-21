@@ -3,7 +3,7 @@
   "short_name": "UC Portfolio",
   "description": "B.Tech student at VIT-AP in Prayagraj, India, building web tools with React, TypeScript, Python and FastAPI — CampusPulse, SwiftPDF, PixelRush, ResumeBoard.",
   "lang": "en",
-  "id": "https://utkarshchoudhary.dev/",
+  "id": "https://potfolio-iota-ashy.vercel.app/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
